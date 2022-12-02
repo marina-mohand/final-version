@@ -1,4 +1,4 @@
-<form class="form-signin">
+<!--<form class="form-signin">
     <h2 class="form-signin-heading">Please sign in</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input name="email" [(ngModel)] = "user.mail" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -12,4 +12,50 @@
          </label>
        </div>
        <button class="btn btn-lg btn-primary btn-block" (click)="validateLogin();" type="button">Sign in</button>
-    </form>
+    </form>-->
+
+
+    <div>
+     
+      
+      <br/>
+      <br/>
+
+      <h2 style="margin: left;"> Veuillez vous connecter</h2>
+      
+      <form #someForm="ngForm" class="example-form">
+     
+        <mat-form-field class="example-full-width">
+          <input matInput  name="email" placeholder="Email" value="email"  [(ngModel)] = "user.mail"  id="inputEmail" required autofocus >
+        </mat-form-field>
+ 
+
+        <mat-form-field class="example-full-width">
+          <input matInput  name="password" type="password" value="mot de passe"  [(ngModel)] = "user.password"  id="inputPassword"  placeholder="Mot de passe" required autofocus >
+        </mat-form-field>
+
+
+      <mat-label>Etes-vous un professeur ?</mat-label>
+        <mat-form-field class="example-full-width">
+        <input matInput name="choice" [(ngModel)] = "user.choice" type="text" id="inputChoice" class="form-control" placeholder="Oui ou Non ?" required autofocus>
+      </mat-form-field>
+
+
+
+    <!-- <mat-checkbox>
+        Se souvenir de moi
+      </mat-checkbox>-->
+
+      <br>
+
+      <button mat-raised-button (click)="validateLogin();" id="colorButton">Me connecter</button>
+
+      <br>
+      <br>
+        <button (click)="someForm.reset()" mat-raised-button color="primary">Réinitialiser le formulaire</button>
+      <br>
+
+       
+      </form>
+      
+      </div>
