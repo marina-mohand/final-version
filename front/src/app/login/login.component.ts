@@ -27,37 +27,38 @@ export class LoginComponent implements OnInit {
   a!: any;
 
   validateLogin() {
+    console.log('1')
     if(this.user.mail && this.user.password ) {
-      this.loginService.validateLogin(this.user).subscribe(result => {
-      console.log('result is ', result);
-      for (const [key, value] of Object.entries(result)) {
-        for (const [keyZ, valueZ] of Object.entries(value)) {
-          
-          this.a = valueZ;
-        }
-      }
-      
-        if(result != null) {
-          
-          for (const [key, value] of Object.entries(this.a)) {
-            
-            
-            sessionStorage.setItem(key, value as string);
-            
-          }
-          if(sessionStorage.getItem('choice')=='oui'){this.router.navigate(['/homeTeacher']);
-          }
-          else {
-            this.router.navigate(['/homeStudent']);
+      console.log('2')
+      this.loginService.validateLogin(this.user).subscribe(
+        result => {
+          console.log('3');
+          for (const [key, value] of Object.entries(result)) {
+            for (const [keyZ, valueZ] of Object.entries(value)) {
+              
+              this.a = valueZ;
+            }
           }
           
-          
-        } else {
-          alert('Wrong username password');
-        }
-    }, error => {
-      console.log('error is ', error);
-    });
+            if(result != null) {
+              
+              for (const [key, value] of Object.entries(this.a)) {
+                
+                
+                sessionStorage.setItem(key, value as string);
+                
+              }
+              if(sessionStorage.getItem('choice')=='oui'){this.router.navigate(['/homeTeacher']);
+              }
+              else {
+                this.router.navigate(['/homeStudent']);
+              }
+              
+              
+            } else {
+              alert('Wrong username password');
+            }
+        })
     } else {
       alert('enter user name and password');
     }
