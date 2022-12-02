@@ -1,38 +1,30 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: #b8b8b8;
-}
+.example-form {
+    min-width: 150px;
+    max-width: 600px;
 
-mat-label{
+    width: 100%;
+    margin: auto;
+    font-size: large;
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  div {
+    text-align: center
+    
+  }
+
+  h2{
     color: black;
-}
+    font-size: x-large;
+   
+  }
 
-mat-card{
-    width: 90%;
-    max-width: 400px;
-
-}
-
-mat-card-header{
-    display: block;
-    text-align: center;
-
-}
-
-mat-form-field{
-    width: 100%;
-}
-
-#btn-login{
-    width: 100%;
-}
-
-mat-error{
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: smaller;
-}
+  #colorButton{
+    background-color: green;
+    color: white;
+  }

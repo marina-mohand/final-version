@@ -1,40 +1,90 @@
-<div class="container">
-    <mat-card>
+
         <mat-card-header>
             <h1> Inscription SpeakApp </h1>
         </mat-card-header>
         <mat-card-content>
-            <mat-label>Vous êtes déjà inscrit ?</mat-label>
+            <mat-card-header>Etes-vous déjà inscrit ?</mat-card-header>
             <u routerLink="/login">Se connecter</u>
         </mat-card-content>
-        <mat-card-content>
-            <form id="formData" #userData="ngForm" (ngSubmit)="registerUser(userData.value)">
-                <mat-label> Nom </mat-label>
-                <mat-form-field>
-                    <input matInput placeholder="Nom" type="text" name="nom" [(ngModel)]="nom" >
+       
+            <form id="formData" #userData="ngForm" (ngSubmit)="registerUser(userData.value)" class="example-form">
+             
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Nom" type="text" name="nom" [(ngModel)]="nom"  required autofocus>
                 </mat-form-field>
-                <mat-label> Prénom </mat-label>
-                <mat-form-field>
-                    <input matInput placeholder="Prenom" type="text" name="prenom" [(ngModel)]="prenom" >
+          
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Prenom" type="text" name="prenom" [(ngModel)]="prenom" required autofocus >
                 </mat-form-field>
-                <mat-label> Mail </mat-label>
-                <mat-form-field>
-                    <input matInput placeholder="Mail" type="email" name="mail" [(ngModel)]="mail" >
+            
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Mail" type="email" name="mail" [(ngModel)]="mail" required autofocus >
                 </mat-form-field>
-                <mat-label> Mot de passe </mat-label>
-                <mat-form-field>
-                    <input matInput placeholder="Mot de passe" type="password" name="password" [(ngModel)]="password" >
+              
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Mot de passe" type="password" name="password" [(ngModel)]="password" required autofocus >
                 </mat-form-field>
-                <select name="choice" id="choice" [(ngModel)]="choice">
-                    <option value="">--Vous etes un professeur ?--</option>
+                <br>
+                <mat-label>Etes-vous un professeur ?</mat-label>
+
+                <select name="choice" id="choice" [(ngModel)]="choice" required autofocus>
+             
                     <option value="oui">oui</option>
                     <option value="non">non</option>
                 </select>
-                <input type="submit" value ="S'inscrire" mat-Button>
+                <br>
+                <button mat-raised-button type="submit" value ="S'inscrire" id="colorButton" >Je m'inscris</button>
                 
              
             </form>
-        </mat-card-content>
-    </mat-card>
-    </div>
+      
+
+
     
+    <div>
+     
+      
+        <br/>
+        <br/>
+        <!--
+        <h2 style="margin: left;"> Veuillez vous connecter</h2>
+        
+        <form  id="formData" #userData="ngForm" class="example-form" (ngSubmit)="registerUser(userData.value)">
+       
+          <mat-form-field class="example-full-width">
+            <input matInput  name="email" placeholder="Email" value="email"  [(ngModel)] = "user.mail"  id="inputEmail" required autofocus >
+          </mat-form-field>
+   
+  
+          <mat-form-field class="example-full-width">
+            <input matInput  name="password" type="password" value="mot de passe"  [(ngModel)] = "user.password"  id="inputPassword"  placeholder="Mot de passe" required autofocus >
+          </mat-form-field>
+  
+  
+        <mat-label>Etes-vous un professeur ?</mat-label>
+          <mat-form-field class="example-full-width">
+          <input matInput name="choice" [(ngModel)] = "user.choice" type="text" id="inputChoice" class="form-control" placeholder="Oui ou Non ?" required autofocus>
+        </mat-form-field>
+  
+  
+  
+      <!-- <mat-checkbox>
+          Se souvenir de moi
+        </mat-checkbox>-->
+  
+      <!--  <br>
+  
+        <button mat-raised-button (click)="validateLogin();" id="colorButton">Me connecter</button>
+  
+        <br>
+        <br>
+          <button (click)="someForm.reset()" mat-raised-button color="primary">Réinitialiser le formulaire</button>
+        <br>
+  
+         
+        </form>
+        
+        </div>
+
+    -->

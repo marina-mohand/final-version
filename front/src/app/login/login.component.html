@@ -33,10 +33,10 @@
         </mat-form-field>
 
 
-      <mat-label>Etes-vous un professeur ?</mat-label>
+      <!--<mat-label>Etes-vous un professeur ?</mat-label>
         <mat-form-field class="example-full-width">
         <input matInput name="choice" [(ngModel)] = "user.choice" type="text" id="inputChoice" class="form-control" placeholder="Oui ou Non ?" required autofocus>
-      </mat-form-field>
+      </mat-form-field>-->
 
 
 
@@ -46,13 +46,10 @@
 
       <br>
 
-      <button mat-raised-button (click)="validateLogin();" id="colorButton">Me connecter</button>
+      <button mat-raised-button (click)="validateLogin();" class="colorButton">Me connecter</button>
 
       <br>
-      <br>
-        <button (click)="someForm.reset()" mat-raised-button color="primary">Réinitialiser le formulaire</button>
-      <br>
-
+  
        
       </form>
       

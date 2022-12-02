@@ -1,28 +1,23 @@
 <app-header></app-header>
     <!--<form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value);getLessons();this.form.reset();this.imageLesson='';onFileUpload();">-->
     <form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value, getidprof());getLessons();">
-        <table mat-table class="mat-elevation-z8"> 
-            <tr>
-                <mat-label> Titre : </mat-label>
-                <mat-form-field>
+     
+                <mat-form-field class="example-full-width">
                     <input matInput placeholder="Insérer le titre de la leçon" type="text" name="lessonTitle" [(ngModel)]="lessonTitle" >
                 </mat-form-field>
-            </tr>
-            <tr>
-                <mat-label> Description : </mat-label>
-                <mat-form-field>
-                    <input matInput placeholder="lessonDescription" type="text" name="lessonDescription" [(ngModel)]="lessonDescription" >
+       
+           
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Insérer la description de la leçon" type="text" name="lessonDescription" [(ngModel)]="lessonDescription" >
                 </mat-form-field>
-            </tr>
-            <tr>
-                <mat-label> Contenue : </mat-label>
-                <mat-form-field>
-                    <textarea matInput placeholder="lessonContenu" name="lessonContenu" [(ngModel)]="lessonContenu" ></textarea>
+       
+           
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Insérer le contenu de la leçon" name="lessonContenu" [(ngModel)]="lessonContenu" ></textarea>
                 </mat-form-field>
-            </tr>
-            <tr>
-                <mat-label [(ngModel)]="idProf" > votre id : {{getidprof()}} </mat-label>
-            </tr>
+     
+                <mat-label [(ngModel)]="idProf" > Votre identifiant : {{getidprof()}} </mat-label>
+     
             
 
 
@@ -31,9 +26,8 @@
             <br>
 
             
-           
-     </table>
-     <input type="submit" value ="S'inscrire" mat-Button>
+
+     <button mat-raised-button type="submit" value ="Ajouter" class="colorButton">Ajouter</button> 
     </form>
 <br>
 
