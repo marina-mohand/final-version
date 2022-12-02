@@ -1,4 +1,8 @@
+
+<div class="my-container">
+
 <app-header></app-header>
+<br>
     <!--<form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value);getLessons();this.form.reset();this.imageLesson='';onFileUpload();">-->
     <form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value, getidprof());getLessons();">
      
@@ -17,11 +21,7 @@
                 </mat-form-field>
      
                 <mat-label [(ngModel)]="idProf" > Votre identifiant : {{getidprof()}} </mat-label>
-     
-            
-
-
-
+    
 
             <br>
 
@@ -57,3 +57,4 @@
 
  
 
+</div>
