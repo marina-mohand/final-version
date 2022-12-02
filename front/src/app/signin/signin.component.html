@@ -1,0 +1,40 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <h1> Inscription SpeakApp </h1>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-label>Vous êtes déjà inscrit ?</mat-label>
+            <u routerLink="/login">Se connecter</u>
+        </mat-card-content>
+        <mat-card-content>
+            <form id="formData" #userData="ngForm" (ngSubmit)="registerUser(userData.value)">
+                <mat-label> Nom </mat-label>
+                <mat-form-field>
+                    <input matInput placeholder="Nom" type="text" name="nom" [(ngModel)]="nom" >
+                </mat-form-field>
+                <mat-label> Prénom </mat-label>
+                <mat-form-field>
+                    <input matInput placeholder="Prenom" type="text" name="prenom" [(ngModel)]="prenom" >
+                </mat-form-field>
+                <mat-label> Mail </mat-label>
+                <mat-form-field>
+                    <input matInput placeholder="Mail" type="email" name="mail" [(ngModel)]="mail" >
+                </mat-form-field>
+                <mat-label> Mot de passe </mat-label>
+                <mat-form-field>
+                    <input matInput placeholder="Mot de passe" type="password" name="password" [(ngModel)]="password" >
+                </mat-form-field>
+                <select name="choice" id="choice" [(ngModel)]="choice">
+                    <option value="">--Vous etes un professeur ?--</option>
+                    <option value="oui">oui</option>
+                    <option value="non">non</option>
+                </select>
+                <input type="submit" value ="S'inscrire" mat-Button>
+                
+             
+            </form>
+        </mat-card-content>
+    </mat-card>
+    </div>
+    

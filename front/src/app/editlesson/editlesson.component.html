@@ -1,0 +1,18 @@
+<app-header></app-header>
+<form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="onSubmit(lessonData.value);">
+    <table mat-table class="mat-elevation-z8"> 
+        <tr>
+            <mat-label> Titre : </mat-label>
+            <mat-form-field>
+                <input matInput placeholder="Insérer le titre de la leçon" type="text" name="lessonTitle" [(ngModel)]="lessonTitle" >
+            </mat-form-field>
+        </tr>
+        <tr>
+            <mat-label> Description : </mat-label>
+            <mat-form-field>
+                <input matInput placeholder="lessonDescription" type="text" name="lessonDescription" [(ngModel)]="lessonDescription" >
+            </mat-form-field>
+        </tr>
+    </table>
+    <input type="submit" value ="S'inscrire" mat-Button>
+</form>

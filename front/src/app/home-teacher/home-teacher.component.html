@@ -1,0 +1,59 @@
+<app-header></app-header>
+    <!--<form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value);getLessons();this.form.reset();this.imageLesson='';onFileUpload();">-->
+    <form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value, getidprof());getLessons();">
+        <table mat-table class="mat-elevation-z8"> 
+            <tr>
+                <mat-label> Titre : </mat-label>
+                <mat-form-field>
+                    <input matInput placeholder="Insérer le titre de la leçon" type="text" name="lessonTitle" [(ngModel)]="lessonTitle" >
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-label> Description : </mat-label>
+                <mat-form-field>
+                    <input matInput placeholder="lessonDescription" type="text" name="lessonDescription" [(ngModel)]="lessonDescription" >
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-label [(ngModel)]="idProf" > votre id : {{getidprof()}} </mat-label>
+            </tr>
+            
+
+
+
+
+            <br>
+
+            
+           
+     </table>
+     <input type="submit" value ="S'inscrire" mat-Button>
+    </form>
+<br>
+
+    <br><br><br><br><br><br><br>
+<table class="table">
+    <thead>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let lesson of lessonsService.lessons">
+            <td>{{lesson.lessonTitle}}</td>
+            <td>{{lesson.lessonDescription}}</td>
+            <td>
+                <a href="edit-lesson/{{lesson._id}}" class="btn btn-success">EDIT</a>
+              </td>
+              <td>
+                <a class="btn btn-danger" (click)="onDelete(lesson._id)">DELETE</a>
+              </td>
+             </tr>
+    </tbody>
+</table>
+
+
+ 
+

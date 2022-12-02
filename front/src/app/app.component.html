@@ -1,0 +1,32 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<br>
+<router-outlet></router-outlet>
+
+<!--Si on est en mode prof on ouvre le teacher component sinon le student-->
+
+  
+<!--Qd on aura le backend-->
+<!--si c est un prof-->
+<!--   
+    <app-header *ngIf="teacherIsLogged()"></app-header>
+    <router-outlet></router-outlet>
+
+-->
+
+<!--si c est un eleve-->
+<!--   
+    <app-header-student *ngIf="studentIsLogged()"></app-header-students>
+    <router-outlet></router-outlet>
+
+-->
+
