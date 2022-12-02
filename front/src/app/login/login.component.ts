@@ -14,7 +14,6 @@ import { HomeStudentComponent } from '../home-student/home-student.component';
 export class LoginComponent implements OnInit {
   mail='';
   password='';
-  choice="";
   wrongCredentials=false;
   public user : User;
  

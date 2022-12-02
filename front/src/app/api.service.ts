@@ -20,8 +20,7 @@ export class ApiService {
   validateLogin(user: any){
     return this.htpp.post('http://localhost:3000/login',{
         mail : user.mail,
-        password : user.password,
-        choice : user.choice
+        password : user.password
     })
 }
 }

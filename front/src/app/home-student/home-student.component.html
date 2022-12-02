@@ -3,14 +3,16 @@
         <thead>
             <th>Title</th>
             <th>Description</th>
-            <th>Inscription</th>
-            <th>Se désinscrire</th>
+            <th>Commencer</th>
             
         </thead>
         <tbody>
             <tr *ngFor="let lesson of lessonsService.lessons">
                 <td>{{lesson.lessonTitle}}</td>
                 <td>{{lesson.lessonDescription}}</td>
+                <td>
+                    <a href="viewLesson/{{lesson._id}}" class="btn btn-success">Commencer</a>
+                </td>
             </tr>
         </tbody>
     </table>
