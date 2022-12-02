@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { LogoutComponent } from './logout/logout.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ViewLessonComponent } from './view-lesson/view-lesson.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent},
@@ -15,7 +17,10 @@ const routes: Routes = [
   { path:'homeTeacher', component:HomeTeacherComponent},
   { path:'homeStudent', component:HomeStudentComponent},
   { path:'edit-lesson/:id', component:EditlessonComponent},
-  { path:'logout', component:LogoutComponent}
+  { path:'logout', component:LogoutComponent},
+  {path:'profile', component:MyProfileComponent},
+  {path:'viewLesson/:id', component:ViewLessonComponent}
+
 ];
 
 @NgModule({

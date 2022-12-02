@@ -26,6 +26,8 @@ import { EditlessonComponent } from './editlesson/editlesson.component';
 import { HeaderstudentComponent } from './headerstudent/headerstudent.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ViewLessonComponent } from './view-lesson/view-lesson.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { LogoutComponent } from './logout/logout.component';
     HeaderstudentComponent,
     HomeComponent,
     LogoutComponent,
+    MyProfileComponent,
+    ViewLessonComponent,
   ],
   imports: [
     BrowserModule,

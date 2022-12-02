@@ -58,7 +58,7 @@ app.post('/login', (req, res) => {
     mongoose.connect('mongodb+srv://speakAppAdmin:speakAppAdmin@cluster0.zx6ndjv.mongodb.net/test',{ useMongoClient: true }, function(err){
         if(err) throw err;
         User.find({
-            mail : req.body.mail, password : req.body.password, choice : req.body.choice
+            mail : req.body.mail, password : req.body.password
         }, function(err, user){
             if(err) throw err;
             if(user.length === 1){  
@@ -131,6 +131,18 @@ app.get('/lessons/id',(request,response)=>{
         
     });
 });
+
+app.get('/viewLesson/:id',(request,response)=>{
+    TeacherLesson.findOne({_id : request.params.id},(error,lesson)=>{
+        if (error){
+            //error 404 : page web non trouvée
+            return response.status(404).json({error:error});
+        }
+            //REQ HTTP qui indique la réussite d une requête
+            response.status(200).json(lesson);
+        
+    });
+})
 
 //POST /lessons
 app.post('/homeTeacher',(request,response)=>{
