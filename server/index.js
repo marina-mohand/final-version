@@ -133,14 +133,10 @@ app.get('/lessons/id',(request,response)=>{
 });
 
 app.get('/viewLesson/:id',(request,response)=>{
-    TeacherLesson.findOne({_id : request.params.id},(error,lesson)=>{
-        if (error){
-            //error 404 : page web non trouvée
-            return response.status(404).json({error:error});
-        }
-            //REQ HTTP qui indique la réussite d une requête
-            response.status(200).json(lesson);
-        
+    const id = request.params.id;
+
+    Lesson.find({ _id : id}, function (err, lessons) {
+        response.json(lessons)
     });
 })
 
@@ -150,11 +146,13 @@ app.post('/homeTeacher',(request,response)=>{
     var lessonTitle = request.body.lessonTitle;
     var lessonDescription = request.body.lessonDescription;
     var idProf = request.body.idProf;
+    var lessonContenu = request.body.lessonContenu;
 
     var lesson = new Lesson();
     lesson.lessonTitle = lessonTitle;
     lesson.lessonDescription = lessonDescription;
     lesson.idProf = idProf;
+    lesson.lessonContenu = lessonContenu;
 
     console.log(lesson);
 

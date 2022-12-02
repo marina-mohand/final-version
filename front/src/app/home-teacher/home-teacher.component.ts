@@ -22,6 +22,7 @@ export class HomeTeacherComponent implements OnInit {
   lessonTitle="";
   lessonDescription="";
   idProf!:string; 
+  lessonContenu!:string;
   
 
   //Tableau de leçons
@@ -58,6 +59,7 @@ export class HomeTeacherComponent implements OnInit {
     )
   }
   saveLesson(lesson:TeacherLesson, idprof:string){
+    console.log(lesson.lessonContenu)
     this.lessonsService.saveLesson(lesson, idprof);
     window.location.reload();
   }

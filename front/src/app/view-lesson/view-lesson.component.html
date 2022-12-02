@@ -1,1 +1,15 @@
- 
+<table class="table">
+    <thead>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Contenu</th>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let lesson of lessonsService.lessons">
+            <td>{{lesson.lessonTitle}}</td>
+            <td>{{lesson.lessonDescription}}</td>
+            <td>{{lesson.lessonContenu}}</td>
+        </tr>
+    </tbody>
+</table>

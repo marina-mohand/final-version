@@ -8,6 +8,7 @@ export class TeacherLesson {
      lessonDescription! : string;
      lessonContenue! : string;
      idProf!:string|null;
+     lessonContenu! : string;
      /*
      color: any;
      lessonNbLikes: any;

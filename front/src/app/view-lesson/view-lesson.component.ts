@@ -22,7 +22,15 @@ export class ViewLessonComponent implements OnInit {
 
 
   getOneLesson(id: any) {
-    this.lessonsService.getOneLesson( this.id);
+    console.log(id);
+    this.lessonsService.getOneLesson(id).subscribe(
+      (res)=>{
+        this.lessonsService.lessons = res as TeacherLesson[];
+      },
+      (error)=>{
+        console.log("Error")
+      }
+    )
   }
 }
 

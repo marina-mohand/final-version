@@ -68,6 +68,7 @@ export class LessonsService {
   }
 
   getOneLesson(id:String){
+    console.log(id);
     return this.http.get('http://localhost:3000/viewLesson/'+id);
   }
 
