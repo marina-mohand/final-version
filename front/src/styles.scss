@@ -34,7 +34,7 @@ $SpeakApp-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: white;}
 #logout-icon-position{
     position:absolute;
@@ -47,17 +47,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   right:80px;
   width: 10px;
 }
-@keyframes color {
+/**@keyframes color {
   0%   { background: #ecd9dc ; }
   20%  { background:#ecd9dd; }
   40%  { background: #ecd9de; }
   60%  { background: #ecd9df; }
   80%  { background: #ecd9ef; }
   100% { background: #ecd9ee; }
-}
+}**/
+
 
 body {
-  background: #33CCCC; /* Fallback */
+  background: #f1f5f8; /* Fallback */
   animation: color 9s infinite linear;
   text-align: center;
   padding: 2em;

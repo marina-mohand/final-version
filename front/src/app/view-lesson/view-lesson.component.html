@@ -1,15 +1,24 @@
-<table class="table">
-    <thead>
-        <th>Title</th>
+  
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr id="headerStyle">
+      
+        <th>Titre de la leçon</th>
         <th>Description</th>
         <th>Contenu</th>
-        
+    
+      </tr>
     </thead>
     <tbody>
+        <ng-container matColumnDef="weight">
         <tr *ngFor="let lesson of lessonsService.lessons">
             <td>{{lesson.lessonTitle}}</td>
             <td>{{lesson.lessonDescription}}</td>
             <td>{{lesson.lessonContenu}}</td>
+  
+          
         </tr>
+        </ng-container>
+    
     </tbody>
-</table>
+  </table>

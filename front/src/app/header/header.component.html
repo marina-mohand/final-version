@@ -1,11 +1,43 @@
 
-<!--Ajout UI component of Angular-->
+
+    <mat-toolbar id="toolbarStyle">
+
+      <span>SpeakApp</span>
+
+      &nbsp;
+      
+      <nav class="navbar navbar-light navbar-expand" >
+        <button routerLink="/homeTeacher"  mat-raised-button class="buttonHeaderStyle" aria-label="Example icon-button with menu icon">
+          Mes leçons
+        </button>
+      </nav>
+
+      <span class="example-spacer"></span>
+      <nav class=" navbar navbar-light navbar-expand"  style="background-color: transparent;">
+        <button routerLink="/profile" mat-icon-button class="user-icon " aria-label="Example icon-user with share icon">
+          <mat-icon>face</mat-icon>
+        </button>
+      </nav>
+
+      
+      <nav class=" navbar navbar-light navbar-expand" style="background-color: transparent;">
+        <button routerLink="/logout" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-logout with share icon">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </nav>
+    
+
+      
+
+    </mat-toolbar>
+
+
+    <!--Ajout UI component of Angular-->
 
 <!--Header : MODE PROF-->
 
-<mat-toolbar class="headerBackgroundColor">
-
-    <!--routerLink = Nom de ton composant dans le path de "app-routing.module.ts"!!! -->
+<!--<mat-toolbar class="headerBackgroundColor">
+    routerLink = Nom de ton composant dans le path de "app-routing.module.ts"!!! 
     <nav class="navbar navbar-dark navbar-expand">
         <button routerLink="/homeTeacher" routerLinkActive="active-link"  mat-button class="buttonHeaderStyle" >
             Mes leçons
@@ -46,10 +78,5 @@
         </button>
       </nav>
 
-    
-
-   
-    
-    
-    
     </mat-toolbar>
+  -->

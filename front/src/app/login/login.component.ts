@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-
 import { ApiService } from '../api.service';
 import { User } from '../models/User';
 import { Router } from '@angular/router';
-import { HomeStudentComponent } from '../home-student/home-student.component';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -31,6 +29,7 @@ export class LoginComponent implements OnInit {
     if(this.user.mail && this.user.password ) {
       console.log('2')
       this.loginService.validateLogin(this.user).subscribe(
+        
         result => {
           console.log('3');
           for (const [key, value] of Object.entries(result)) {

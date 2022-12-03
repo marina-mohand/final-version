@@ -29,6 +29,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ViewLessonComponent } from './view-lesson/view-lesson.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +63,11 @@ import { ViewLessonComponent } from './view-lesson/view-lesson.component';
     MatFormFieldModule,
     HttpClientModule,
     RouterModule,
-    MatCheckboxModule
+
+  
+  
+
+   
   ],
   providers: [ApiService,
     LessonsService,

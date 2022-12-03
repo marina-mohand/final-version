@@ -3,58 +3,87 @@
 
 <app-header></app-header>
 <br>
-    <!--<form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value);getLessons();this.form.reset();this.imageLesson='';onFileUpload();">-->
-    <form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value, getidprof());getLessons();">
-     
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Insérer le titre de la leçon" type="text" name="lessonTitle" [(ngModel)]="lessonTitle" >
-                </mat-form-field>
-       
-           
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Insérer la description de la leçon" type="text" name="lessonDescription" [(ngModel)]="lessonDescription" >
-                </mat-form-field>
-       
-           
-                <mat-form-field class="example-full-width">
-                    <textarea matInput placeholder="Insérer le contenu de la leçon" name="lessonContenu" [(ngModel)]="lessonContenu" ></textarea>
-                </mat-form-field>
-     
-                <mat-label [(ngModel)]="idProf" > Votre identifiant : {{getidprof()}} </mat-label>
-    
 
-            <br>
+<h1>Bonjour {{nom}}</h1>
+
+    <!--<form id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value);getLessons();this.form.reset();this.imageLesson='';onFileUpload();">-->
+    <form  name="formData" id="formData"  class="example-form" #lessonData="ngForm" (ngSubmit)="saveLesson(lessonData.value, getidprof());getLessons();">
+     
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Insérer le titre de la leçon" type="text" [(ngModel)]="lessonTitle" name="lessonTitle" >
+                </mat-form-field>
+       
+           
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Insérer la description de la leçon" type="text" [(ngModel)]="lessonDescription"  name="lessonDescription">
+                </mat-form-field>
+           
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Insérer le contenu de la leçon"  [(ngModel)]="lessonContenu" name="lessonContenu"></textarea>
+                </mat-form-field>
 
             
+                
 
+
+              <!--  <div>
+                  <input (change)="onFileSelect($event)" type="file" />
+                </div>
+                
+                 <div *ngIf="lessonImage">
+                  <img [src]="lessonImage" [alt]="form.value.name"/>
+                </div>
+
+            -->
+
+       
+
+                <mat-label [(ngModel)]="idProf" name="idProf" > Votre identifiant : {{getidprof()}} </mat-label>
+
+           
+          
+            <br>
      <button mat-raised-button type="submit" value ="Ajouter" class="colorButton">Ajouter</button> 
     </form>
+
+    <input #Image type="file" (change)="handleFileInput($event.target.files)"/>
+<img width="100%" *ngIf="imageUrl" [src]="imageUrl" class="image">
+
 <br>
 
-    <br><br><br><br><br><br><br>
-<table class="table">
-    <thead>
+    <br><br>
+<h1>Mes leçons crées : </h1>
+<table class="table align-middle mb-0 bg-black">
+    <thead class="bg-light">
+      <tr id="headerStyle">
+      
         <th>Title</th>
         <th>Description</th>
+        <th>Miniature</th>
         <th>Edit</th>
         <th>Delete</th>
-        
+    
+      </tr>
     </thead>
     <tbody>
+        <ng-container matColumnDef="weight">
         <tr *ngFor="let lesson of lessonsService.lessons">
             <td>{{lesson.lessonTitle}}</td>
             <td>{{lesson.lessonDescription}}</td>
+            <td>{{lesson.lessonImage}}</td>
             <td>
                 <a href="edit-lesson/{{lesson._id}}" class="btn btn-success">EDIT</a>
-              </td>
-              <td>
+            </td>
+            <td>
                 <a class="btn btn-danger" (click)="onDelete(lesson._id)">DELETE</a>
-              </td>
-             </tr>
+            </td>
+        </tr>
+        </ng-container>
+    
     </tbody>
-</table>
-
+  </table>
 
  
 
 </div>
+

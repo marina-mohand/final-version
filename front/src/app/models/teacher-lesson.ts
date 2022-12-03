@@ -6,9 +6,10 @@ export class TeacherLesson {
      _id!: string;
      lessonTitle! : string;
      lessonDescription! : string;
-     lessonContenue! : string;
      idProf!:string|null;
      lessonContenu! : string;
+     lessonImage!:string;
+   
      /*
      color: any;
      lessonNbLikes: any;
