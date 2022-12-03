@@ -189,6 +189,7 @@ app.put('/edit-lesson/:id',(request,response)=>{
         _id: request.params.id,
         lessonTitle : requestLesson.lessonTitle,
         lessonDescription : requestLesson.lessonDescription,
+        lessonContenu : requestLesson.lessonContenu
        
     });
     console.log(newLesson);

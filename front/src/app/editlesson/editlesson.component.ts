@@ -15,6 +15,7 @@ export class EditlessonComponent implements OnInit {
   lesson!:TeacherLesson;
   lessonTitle="";
   lessonDescription="";
+  lessonContenu="";
 
   //Tableau de leçons
   addLesson: any;
@@ -30,6 +31,7 @@ export class EditlessonComponent implements OnInit {
 
   onSubmit(lesson:TeacherLesson) {
     this.lessonsService.updateLesson(lesson, this.id);
+    this.router.navigate(['/homeTeacher'])
   }
 
 }

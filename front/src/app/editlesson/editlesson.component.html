@@ -13,6 +13,12 @@
                 <input matInput placeholder="lessonDescription" type="text" name="lessonDescription" [(ngModel)]="lessonDescription" >
             </mat-form-field>
         </tr>
+        <tr>
+            <mat-label> contenu : </mat-label>
+            <mat-form-field>
+                <textarea matInput placeholder="lessonContenu" name="lessonContenu" [(ngModel)]="lessonContenu" ></textarea>
+            </mat-form-field>
+        </tr>
     </table>
     <input type="submit" value ="S'inscrire" mat-Button>
 </form>
