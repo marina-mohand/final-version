@@ -8,21 +8,48 @@
                        
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form name="formData" id="formData"  class="example-form" #userData="ngForm" (ngSubmit)="onSubmit(userData.value)"  >
                             <div class="row">
                                 <div class="col-md-5">
                              
                                 </div>
                                 <div class="col-md-3">
+                                    <mat-label>Mail ?</mat-label>
                                     <mat-form-field class="example-full-width">
-                                      <input matInput placeholder="Nom d'utilisateur">
+                                      <input matInput name="mail" placeholder="Mail" [(ngModel)]="mail">
                                     </mat-form-field>
                                 </div>
 
 
                                 <div class="col-md-4">
+                                    <mat-label>Mot de passe ?</mat-label>
                                     <mat-form-field class="example-full-width">
-                                      <input matInput placeholder="Mot de passe" type="password">
+                                      <input matInput placeholder="Mot de passe" name="password"type="password" [(ngModel)]="password">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <mat-label>nom ?</mat-label>
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput name="nom" placeholder="Nom" [(ngModel)]="nom">
+                                    </mat-form-field>
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <mat-label>Prénom ?</mat-label>
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Prenom" name="prenom"type="text" [(ngModel)]="prenom">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3">
+                                    <mat-label>Etes-vous un professeur ?</mat-label>
+                                    <mat-form-field class="example-full-width">
+                                        <select name="choice" id="choice" [(ngModel)]="choice" required autofocus>
+             
+                                            <option value="oui">oui</option>
+                                            <option value="non">non</option>
+                                        </select>
                                     </mat-form-field>
                                 </div>
                             </div>

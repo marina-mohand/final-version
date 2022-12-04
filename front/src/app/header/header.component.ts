@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../models/User';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  user = new User();
+
+  constructor( private router:Router) { }
 
   ngOnInit(): void {
+    this.user.id = sessionStorage.getItem('_id') as string;
   }
 
+  profilredirect(){
+    this.router.navigate(['profil']);
+  }
 }

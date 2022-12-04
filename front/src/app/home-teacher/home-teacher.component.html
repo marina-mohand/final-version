@@ -21,6 +21,7 @@
                 <mat-form-field class="example-full-width">
                     <textarea matInput placeholder="Insérer le contenu de la leçon"  [(ngModel)]="lessonContenu" name="lessonContenu"></textarea>
                 </mat-form-field>
+                
 
             
                 
@@ -46,7 +47,7 @@
      <button mat-raised-button type="submit" value ="Ajouter" class="colorButton">Ajouter</button> 
     </form>
 
-    <input #Image type="file" (change)="handleFileInput($event.target.files)"/>
+    <input #Image type="file" (change)="handleFileInput($event)"/>
 <img width="100%" *ngIf="imageUrl" [src]="imageUrl" class="image">
 
 <br>

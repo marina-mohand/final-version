@@ -35,6 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
 //Creation de notre tableaux de lessons
 let lessons =[];
+let user =[];
 
 app.post('/',upload.single('file'),(req,res)=>{})
 
@@ -198,6 +199,31 @@ app.put('/edit-lesson/:id',(request,response)=>{
 Lesson.updateOne({_id:request.params.id},newLesson,(error,lesson)=>{
     if(error) return response.status(400).json({error:error});
     response.status(201).json(lesson);
+});
+
+})
+
+
+app.put('/profil/:id',(request,response)=>{
+    //request = ce que j ai reçu
+    let requestUser = request.body;
+
+    let newUser= ({
+        _id: request.params.id,
+        mail : requestUser.mail,
+        paswword : requestUser.password,
+        nom : requestUser.nom,
+        prenom : requestUser.prenom,
+        choice : requestUser.choice
+
+       
+    });
+    console.log(newUser);
+
+
+User.updateOne({_id:request.params.id},newUser,(error,user)=>{
+    if(error) return response.status(400).json({error:error});
+    response.status(201).json(user);
 });
 
 })

@@ -18,7 +18,7 @@ const routes: Routes = [
   { path:'homeStudent', component:HomeStudentComponent},
   { path:'edit-lesson/:id', component:EditlessonComponent},
   { path:'logout', component:LogoutComponent},
-  {path:'profile', component:MyProfileComponent},
+  {path:'profil/:id', component:MyProfileComponent},
   {path:'viewLesson/:id', component:ViewLessonComponent}
 
 ];

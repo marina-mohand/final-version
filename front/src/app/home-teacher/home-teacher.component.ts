@@ -112,11 +112,12 @@ export class HomeTeacherComponent implements OnInit {
 
 
 
-  user!:User;
-  nom=this.user.nom;
+  nom=sessionStorage.getItem("nom")
   fileToUpload: any;
   imageUrl: any;
-  handleFileInput(file: FileList) {
+  handleFileInput(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const file = target.files!;
     this.fileToUpload = file.item(0);
 
     //Show image preview

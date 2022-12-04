@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
 import {  Router } from '@angular/router';
+import { User } from './models/User';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,5 +23,13 @@ export class ApiService {
         mail : user.mail,
         password : user.password
     })
-}
+  }
+  updateUser(user:User, id:String){
+    this.htpp.put('http://localhost:3000/profil/'+id, user).subscribe(res =>{
+      console.log(res);
+    });
+    if(sessionStorage.getItem('choice')=="non") this.router.navigate(['/homeStudent'])
+    else this.router.navigate(['/homeTeacher'])
+    
+  }
 }
